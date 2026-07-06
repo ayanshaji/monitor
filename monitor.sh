@@ -4,13 +4,20 @@
 # ################################
 #
 echo "Display Services"
-aws ec2 describe-instances
+systemctl list-units --type=service --state=running --no-pager
+
+echo 
 ########################
 echo "CPU Usage"
-top
+mpstat
+
+echo
 ############################
 echo "Memory Usage"
 free -g
+
+echo
+
 ###########################
 echo "Disk Usage"
 df -h
